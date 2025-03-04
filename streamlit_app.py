@@ -78,4 +78,13 @@ with col2:
             st.session_state.question_index += 1
             time.sleep(0.3)  # Smooth transition effect
             st.rerun()
-        elif st.button("No
+        elif st.button("No ❌"):  # <-- Fixed the missing quote here
+            st.session_state.question_index += 1
+            time.sleep(0.3)  # Smooth transition effect
+            st.rerun()
+    else:
+        # Final Result
+        st.snow()  # 🎉 Fun effect for results
+        st.markdown("<h1 style='text-align: center;'>RESULT:</h1>", unsafe_allow_html=True)
+        st.markdown("<h2 style='text-align: center; color: white;'>You're a REAL TERP. 🏋️‍♂️🔥</h2>", unsafe_allow_html=True)
+        st.markdown("<p style='text-align: center; font-size: 18px; color: #A0A0A0;'>Time to hit the gym and eat more steak.</p>", unsafe_allow_html=True)
