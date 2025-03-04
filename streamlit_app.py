@@ -4,56 +4,71 @@ import random
 # Set up Streamlit layout
 st.set_page_config(page_title="Zach's Gaydar", page_icon="🏳️‍🌈", layout="wide")
 
-# Custom CSS for modern styling
+# Custom CSS for Apple/Tesla-inspired modern UI
 st.markdown(
     """
     <style>
         body {
-            background-color: #121212;
-            color: white;
+            background-color: #0E0E0E;
+            color: #EAEAEA;
+            font-family: 'SF Pro Display', sans-serif;
         }
         .main {
-            background-color: #181818;
+            background: rgba(255, 255, 255, 0.05);
             padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(12px);
         }
         .question-card {
-            background-color: #222;
+            background: rgba(255, 255, 255, 0.08);
             padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 10px;
-            box-shadow: 0px 2px 5px rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            margin-bottom: 12px;
+            box-shadow: 0px 2px 8px rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+        .question-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0px 4px 12px rgba(255, 255, 255, 0.15);
         }
         h1 {
             text-align: center;
-            font-size: 50px;
-            background: -webkit-linear-gradient(45deg, #ff0000, #ff9900, #ffff00, #33cc33, #3399ff, #9933ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 48px;
+            color: white;
+            font-weight: 600;
+            letter-spacing: -1px;
+        }
+        h3 {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 300;
+            color: #B0B0B0;
         }
         .stButton>button {
             width: 100%;
-            padding: 12px;
-            border-radius: 8px;
-            background: linear-gradient(90deg, #ff007f, #8B00FF);
+            padding: 14px;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #333, #111);
             color: white;
             font-size: 18px;
-            font-weight: bold;
-            transition: 0.3s;
+            font-weight: 500;
+            border: none;
+            transition: all 0.3s ease-in-out;
         }
         .stButton>button:hover {
             transform: scale(1.05);
-            background: linear-gradient(90deg, #8B00FF, #ff007f);
+            background: linear-gradient(90deg, #111, #333);
+            box-shadow: 0px 4px 12px rgba(255, 255, 255, 0.15);
         }
     </style>
     """,
     unsafe_allow_html=True
 )
 
-# Title with a gradient effect
-st.markdown("<h1>🌈 AM I GAY? 🌈</h1>", unsafe_allow_html=True)
-st.markdown("<h3 style='text-align: center;'>Answer 10 fun questions to find out!</h3>", unsafe_allow_html=True)
+# Title with modern typography
+st.markdown("<h1>AM I GAY?</h1>", unsafe_allow_html=True)
+st.markdown("<h3>Answer 10 fun questions to find out.</h3>", unsafe_allow_html=True)
 
 # Fun questions to ask
 questions = [
@@ -69,16 +84,12 @@ questions = [
     "Do you have a favorite Mariah Carey song?"
 ]
 
-# Pride Colors for each question
-pride_colors = ["#FF0000", "#FF7F00", "#FFFF00", "#00FF00", "#0000FF", "#8B00FF"]
-
 # Centered layout
 with st.container():
     with st.form("gaydar_quiz"):
         answers = []
         for i, question in enumerate(questions):
-            color = pride_colors[i % len(pride_colors)]  # Cycle through pride colors
-            st.markdown(f"<div class='question-card'><h4 style='color: {color};'>{question}</h4></div>", unsafe_allow_html=True)
+            st.markdown(f"<div class='question-card'><h4>{question}</h4></div>", unsafe_allow_html=True)
             answers.append(st.radio(f"Question {i+1}", ["Yes", "No"], index=random.choice([0, 1]), key=i))
 
         # Submit button
@@ -86,7 +97,7 @@ with st.container():
 
 # Show results
 if submitted:
-    st.snow()  # 🎉 Adds a fun confetti effect
-    st.markdown("<h2 style='text-align: center; color: #8B00FF;'>🎉 Surprise! 🎉</h2>", unsafe_allow_html=True)
-    st.markdown("<h1 style='text-align: center; font-size: 40px; color: #FF0000;'>You're Gay! 🏳️‍🌈</h1>", unsafe_allow_html=True)
-    st.markdown("<p style='text-align: center; font-size: 20px;'>Don't fight it, just embrace it. Welcome to the club! 💖💜💙</p>", unsafe_allow_html=True)
+    st.snow()  # 🎉 Subtle animation effect
+    st.markdown("<h2 style='text-align: center; color: #EAEAEA;'>🎉 The Results Are In! 🎉</h2>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; font-size: 40px; color: #FFFFFF;'>You're Gay.</h1>", unsafe_allow_html=True)
+    st.markdown("<p style='text-align: center; font-size: 20px; color: #B0B0B0;'>Embrace it. Live it. Love it.</p>", unsafe_allow_html=True)
