@@ -28,16 +28,7 @@ st.markdown("""
 
 # --- QUESTIONS ---
 questions = [
-    "Are you gay?",
-    "Do you like jews?",
-    "Are you black?",
-    "Do you have a Kamala butt plug?",
-    "Are you vegan?",
-    "Do you HODL?",
-    "Do you own plats?",
-    "Do you like 2007 Camrys?",
-    "Have you ever been to a Stadie Wedding?",
-    "Do you owe Mantis money?"
+
 ]
 
 # --- SESSION STATE (Track Progress) ---
