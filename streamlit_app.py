@@ -2,73 +2,78 @@ import streamlit as st
 import random
 
 # Set up Streamlit layout
-st.set_page_config(page_title="Zach's Gaydar", page_icon="🏳️‍🌈", layout="wide")
+st.set_page_config(page_title="Zach's Gaydar", page_icon="🏳️‍🌈", layout="centered")
 
-# Custom CSS for Apple/Tesla-inspired modern UI
+# Custom CSS for Tesla-Inspired UI
 st.markdown(
     """
     <style>
+        /* General Styles */
         body {
-            background-color: #0E0E0E;
+            background-color: #000000;
             color: #EAEAEA;
-            font-family: 'SF Pro Display', sans-serif;
+            font-family: 'Helvetica Neue', sans-serif;
         }
-        .main {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 20px;
-            border-radius: 16px;
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(12px);
+        .main-container {
+            max-width: 600px;
+            margin: auto;
+            padding: 40px;
         }
-        .question-card {
-            background: rgba(255, 255, 255, 0.08);
-            padding: 15px;
-            border-radius: 12px;
-            margin-bottom: 12px;
-            box-shadow: 0px 2px 8px rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease-in-out;
-        }
-        .question-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0px 4px 12px rgba(255, 255, 255, 0.15);
-        }
+        /* Title Styling */
         h1 {
             text-align: center;
-            font-size: 48px;
-            color: white;
+            font-size: 54px;
             font-weight: 600;
-            letter-spacing: -1px;
+            color: white;
+            margin-bottom: 10px;
         }
         h3 {
             text-align: center;
-            font-size: 24px;
+            font-size: 22px;
             font-weight: 300;
-            color: #B0B0B0;
+            color: #A0A0A0;
+            margin-bottom: 30px;
         }
+        /* Question Cards */
+        .question-card {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 18px;
+            border-radius: 10px;
+            margin-bottom: 16px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0px 4px 12px rgba(255, 255, 255, 0.05);
+        }
+        .question-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0px 8px 16px rgba(255, 255, 255, 0.08);
+        }
+        /* Button Styling */
         .stButton>button {
             width: 100%;
-            padding: 14px;
-            border-radius: 10px;
-            background: linear-gradient(90deg, #333, #111);
+            padding: 16px;
+            border-radius: 8px;
+            background: #111111;
             color: white;
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 500;
-            border: none;
+            border: 2px solid white;
             transition: all 0.3s ease-in-out;
         }
         .stButton>button:hover {
+            background: white;
+            color: black;
+            border: 2px solid white;
             transform: scale(1.05);
-            background: linear-gradient(90deg, #111, #333);
-            box-shadow: 0px 4px 12px rgba(255, 255, 255, 0.15);
         }
     </style>
     """,
     unsafe_allow_html=True
 )
 
-# Title with modern typography
-st.markdown("<h1>AM I GAY?</h1>", unsafe_allow_html=True)
-st.markdown("<h3>Answer 10 fun questions to find out.</h3>", unsafe_allow_html=True)
+# Tesla-Style Layout
+with st.container():
+    st.markdown("<h1>AM I GAY?</h1>", unsafe_allow_html=True)
+    st.markdown("<h3>Answer 10 simple questions to find out.</h3>", unsafe_allow_html=True)
 
 # Fun questions to ask
 questions = [
@@ -93,11 +98,11 @@ with st.container():
             answers.append(st.radio(f"Question {i+1}", ["Yes", "No"], index=random.choice([0, 1]), key=i))
 
         # Submit button
-        submitted = st.form_submit_button("Get My Results 🏳️‍🌈")
+        submitted = st.form_submit_button("Get My Results")
 
 # Show results
 if submitted:
     st.snow()  # 🎉 Subtle animation effect
     st.markdown("<h2 style='text-align: center; color: #EAEAEA;'>🎉 The Results Are In! 🎉</h2>", unsafe_allow_html=True)
     st.markdown("<h1 style='text-align: center; font-size: 40px; color: #FFFFFF;'>You're Gay.</h1>", unsafe_allow_html=True)
-    st.markdown("<p style='text-align: center; font-size: 20px; color: #B0B0B0;'>Embrace it. Live it. Love it.</p>", unsafe_allow_html=True)
+    st.markdown("<p style='text-align: center; font-size: 18px; color: #A0A0A0;'>Embrace it. Live it. Love it.</p>", unsafe_allow_html=True)
