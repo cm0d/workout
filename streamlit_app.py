@@ -28,16 +28,16 @@ st.markdown("""
 
 # --- QUESTIONS ---
 questions = [
-    "Do you lift at least 5 days a week?",
-    "Do you consume over 200g of protein daily?",
-    "Have you ever made fun of someone for ordering a salad?",
-    "Do you unironically say 'alpha' or 'sigma'?",
-    "Do you believe Andrew Tate has some valid points?",
-    "Have you ever had a debate about taxes in the gym?",
-    "Do you consider bench press a personality trait?",
-    "Do you think iced coffee is for betas?",
-    "Would you rather own a truck than a Prius?",
-    "Do you think everyone should do a bulk at least once?"
+    "Are you gay?",
+    "Do you like jews?",
+    "Are you black?",
+    "Do you have a Kamala butt plug?",
+    "Are you vegan?",
+    "Do you HODL?",
+    "Do you own plats?",
+    "Do you like 2007 Camrys?",
+    "Have you ever been to a Stadie Wedding?",
+    "Do you owe Mantis money?"
 ]
 
 # --- SESSION STATE (Track Progress) ---
@@ -77,14 +77,5 @@ with col2:
         if st.button("Yes ✅"):
             st.session_state.question_index += 1
             time.sleep(0.3)  # Smooth transition effect
-            st.experimental_rerun()
-        elif st.button("No ❌"):
-            st.session_state.question_index += 1
-            time.sleep(0.3)  # Smooth transition effect
-            st.experimental_rerun()
-    else:
-        # Final Result
-        st.snow()  # 🎉 Fun effect for results
-        st.markdown("<h1 style='text-align: center;'>RESULT:</h1>", unsafe_allow_html=True)
-        st.markdown("<h2 style='text-align: center; color: white;'>You're a REAL TERP. 🏋️‍♂️🔥</h2>", unsafe_allow_html=True)
-        st.markdown("<p style='text-align: center; font-size: 18px; color: #A0A0A0;'>Time to hit the gym and eat more steak.</p>", unsafe_allow_html=True)
+            st.rerun()
+        elif st.button("No
