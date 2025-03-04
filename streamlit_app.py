@@ -22,7 +22,7 @@ questions = [
 st.set_page_config(page_title="Zach's Gaydar", page_icon="🏳️‍🌈", layout="centered")
 
 # Title with rainbow effect
-st.markdown("<h1 style='text-align: center; font-size: 50px;'>🌈 Zach's Gaydar 🌈</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; font-size: 50px;'>🌈 AM I GAY? 🌈</h1>", unsafe_allow_html=True)
 st.markdown("<h3 style='text-align: center;'>Answer these 10 questions and we'll tell you the truth!</h3>", unsafe_allow_html=True)
 
 # Create a form
